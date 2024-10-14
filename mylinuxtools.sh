@@ -90,6 +90,7 @@ fi
 
 
 # Install Python 3
+check_installed python3
 if [ $? -eq 0 ]; then
 	if prompt_install "Python 3"; then
 		echo "Installing Python 3..."
@@ -100,6 +101,7 @@ fi
 
 
 # Install Docker Desktop
+check_installed docker
 if [ $? -eq 0 ]; then
 	if prompt_install "Docker Desktop"; then
 		echo "Installing Docker Desktop..."
@@ -115,6 +117,7 @@ fi
 
 
 # Install GO programming language
+check_installed go
 if [ $? -eq 0 ]; then
 	if prompt_install "GO"; then
 		echo "Installing GO..."
