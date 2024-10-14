@@ -70,15 +70,21 @@ if [ $? -eq 0 ]; then
 fi
 
 
-# Install kubernetes tools (kubectl, kubeadm, kubelet)
+# Install kubernetes tools (kubectl)
 check_installed kubectl
 if [ $? -eq 0 ]; then
-	if prompt_install "Kubernetes (kubectl, kubeadm, kubelet)"; then 
-		echo "Installing Kubernetes (kubectl, kubeadm, kubelet)..."
-		sudo dnf install -y kubernetes kubectl kubeadm kubelet
+	if prompt_install "Kubernetes"; then 
+		echo "Installing Kubernetes..."
+		cat <<EOF | sudo tee /etc/yum.repos.d/kubernetes.repo
+[kubernetes]
+name=Kubernetes
+baseurl=https://pkgs.k8s.io/core:/stable:/v1.31/rpm/
+enabled=1
+gpgcheck=1
+gpgkey=https://pkgs.k8s.io/core:/stable:/v1.31/rpm/repodata/repomd.xml.key
+EOF
+		sudo yum install -y kubectl
 		check_status "Kubernetes"
-		sudo systemctl enable --now kubelet 
-		check_status "Kubelet Service"
 	fi
 fi
 
