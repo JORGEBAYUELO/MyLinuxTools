@@ -22,12 +22,12 @@ This script will install the following tools:
 
 1. Clone this repository:
     ```bash
-    git clone <repo-url>
+    git clone https://github.com/JORGEBAYUELO/MyLinuxTools.git
     ```
 
 2. Navigate to the directory:
     ```bash
-    cd <repo-directory>
+    cd MyLinuxTools
     ```
 
 3. Make the script executable:
