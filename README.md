@@ -17,6 +17,7 @@ This script will install the following tools:
 - **Color-coded Output**: Green text indicates a successful installation, and red text indicates a failure.
 - **Logging**: The script logs all output to `setup_log.txt` for future reference.
 - **Pre-checks**: The script checks if the tool is already installed before attempting to install it, to avoid redundant installations.
+- **Distro Detection**: The script now checks for Fedora, CentOS, or RHEL and switch between dnf and yum, ensuring the script works across RPM-based distributions.
 
 ## Usage
 
@@ -48,7 +49,7 @@ The script logs all installation processes and results to `setup_log.txt`. You c
 
 ## Requirements
 
-- Fedora 40
+- RPM based distros
 
 ## Contributing
 
