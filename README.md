@@ -10,6 +10,7 @@ This script will install the following tools:
 - [Python 3](https://www.python.org/) - A versatile programming language.
 - [Docker Desktop](https://www.docker.com/products/docker-desktop) - A containerization platform for application development.
 - [Go](https://golang.org/) - A programming language designed for efficient software development.
+- [Ansible](https://docs.ansible.com/ansible/latest/installation_guide/intro_configuration.html) - An open-source IT automation platform that helps organizations automate many IT processes.
 
 ### Additional Enhancements
 - **Interactive Prompts**: You can selectively install the tools by responding to the prompts during script execution.
@@ -18,6 +19,9 @@ This script will install the following tools:
 - **Logging**: The script logs all output to `setup_log.txt` for future reference.
 - **Pre-checks**: The script checks if the tool is already installed before attempting to install it, to avoid redundant installations.
 - **Distro Detection**: The script now checks for Fedora, CentOS, or RHEL and switch between dnf and yum, ensuring the script works across RPM-based distributions.
+- **Menu System**: A menu now lists all the tools, and the user can select one or more tools by entering the corresponding numbers (e.g., 1 3 to install Visual Studio Code and Python 3).
+- **Input Handling**: The script reads the user's input and installs the selected tools based on their choices.
+- **Exit Option**: Allows the user to exit the script.
 
 ## Usage
 
